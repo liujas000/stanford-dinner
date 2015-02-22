@@ -2,13 +2,19 @@
 
 <HTML>
 	<HEAD>
-    <link href='http://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>
 		<TITLE>Stanford Dinner</TITLE>
 	</HEAD>
  
 	<BODY>
-		<h1 class="cursive-header">Dine</h1>
-		<h2 class = "italic">Today is <%=@weekday%>. Which dining hall had a good <%=@meal%>?</h2>
+    <div class="row">
+      <div class="col-md-2 col-md-offset-1">
+		    <p class="cursive-header big-title">dine</p>
+      </div>
+      <div class="col-md-9">
+		    <p class = "cursive-header bottom-align">Today is <%=@weekday%>. Which dining hall had a good <%=@meal%>?</p>
+      </div>
+    </div>
 			<% @halls.each do |hall| %>
 				<div class="col-sm-4">
     			<div class="panel ">
@@ -26,7 +32,7 @@
               <div class="col-md-6">
 						    <img src="<%= hall.img %>">
               </div>
-              <div id="score<%= hall.id %>" >
+              <div class="col-md-2 score cursive-header" id="score<%= hall.id %>" >
 						    <%= hall.score %>
               </div>
             </div>

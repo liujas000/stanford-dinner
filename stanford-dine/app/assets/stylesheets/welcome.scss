@@ -6,10 +6,19 @@ body{
   background-color: #D6F5FF;
 }
 
+.big-title {
+  font-size: 70px;
+}
+
+.bottom-align {
+  position:relative;
+  top: 50px;
+  left: 0px;
+  font-size: 25px;
+}
+
 .cursive-header{
-  font-style: bold;
-  text-indent: 40px;
-  
+  font-family: 'Comfortaa';
 }
 
 .italic {
@@ -36,5 +45,6 @@ body{
 .score {
   position:relative;
   font-size: 60px;
+
 }
 
