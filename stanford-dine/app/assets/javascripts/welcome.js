@@ -1,8 +1,6 @@
-
 $(document).ready(function(){
 	$('.plus-button').click(function(){
-    var id = $(this).parent().attr("id");
-		alert("plus button pressed " + id);
+    var id = $(this).parent().attr("id");	
 		$.ajax({
 		  type: "POST",
       url:"/vote",
@@ -11,11 +9,11 @@ $(document).ready(function(){
         vote: 1
       },
       success: function() {
-        alert("ajax success");
+        
       },
       error: function(data) {
           console.log(data);
-          alert("ajax failure");
+          console.log("ajax failure");
       }
 		})
     
@@ -25,7 +23,6 @@ $(document).ready(function(){
 $(document).ready(function(){
 	$('.minus-button').click(function(){
     var id = $(this).parent().attr("id");
-		alert("minus button pressed" + id);
 		$.ajax({
 		  type: "POST",
       url:"/vote",
@@ -34,13 +31,14 @@ $(document).ready(function(){
         vote: -1
       },
       success: function() {
-        alert("ajax success");
+        
       },
       error: function(data) {
           console.log(data);
-          alert("ajax failure");
+          console.log("ajax failure");
       }
 		})
 	});
 });
 alert("javascript started");
+
