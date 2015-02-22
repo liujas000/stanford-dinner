@@ -1,17 +1,17 @@
 
 $(document).ready(function(){
-  $("[id^='score']").each(function(index) {
-  var n = parseInt($(this).getText());
-    if(n > 0) {
-      $(this).css('color', 'green');
-    }
-    else if(n < 0) {
-      $(this).css('color', 'red');
-    }
-    else {
-      $(this).css('color', 'black');
-    }
-  });
+  // $("[id^='score']").each(function(index) {
+//   var n = parseInt($(this).getText());
+//     if(n > 0) {
+//       $(this).css('color', 'green');
+//     }
+//     else if(n < 0) {
+//       $(this).css('color', 'red');
+//     }
+//     else {
+//       $(this).css('color', 'black');
+//     }
+//   });
   $('.plus-button').click(function(){
     var id = $(this).parent().attr("id");
     var button = $(this).parent;
@@ -28,17 +28,17 @@ $(document).ready(function(){
             change *= 2;
         }
     }
-    var newScore = parseInt($("#score"+id).text()) + change
-    $("#score"+id).text(newScore);
-    if(k > 0) {
-      $(newScore).css('color', 'green');
-    }
-    else if(k < 0) {
-      $(newScore).css('color', 'red');
-    }
-    else {
-      $(newScore).css('color', 'black');
-    }
+    // var newScore = parseInt($("#score"+id).text()) + change
+    // $("#score"+id).text(newScore);
+    // if(k > 0) {
+    //   $(newScore).css('color', 'green');
+    // }
+    // else if(k < 0) {
+    //   $(newScore).css('color', 'red');
+    // }
+    // else {
+    //   $(newScore).css('color', 'black');
+    // }
   
     $.ajax({
       type: "POST",
