@@ -1,4 +1,4 @@
-//
+
 // $(function(){
 //     $('#plus-button').on('click', function(e){
 //         alert("BUTTON WAS PRESSED"å);
@@ -23,8 +23,9 @@ $(document).ready(function(){
       success: function() {
         alert("ajax success");
       },
-      error: function() {
-        alert("ajax failure");
+      error: function(data) {
+          console.log(data);
+          alert("ajax failure");
       }
 		})
     
