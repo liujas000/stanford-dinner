@@ -3,16 +3,8 @@
 <link href="assets/bootstrap.css" rel="stylesheet">
 
 <script>
-buttonpress = function(){
-    alert("BUTTON WAS PRESSED");
-    // console.log("button pressed");
-    // $.ajax({
-    //   type:'POST',
-    //   url:'/vote/'+ $(this).attr('id') + '/1';
-    // })
-}
 $(document).ready(function(){
-	$('#plus-button').click(function(){
+	$('.plus-button').click(function(){
 		alert("jquery button was pressed");
 	})
 })
@@ -37,8 +29,8 @@ alert("javascript started");
 								<h3><%= hall.name %></h3>
 								<p><h4><%= hall.score %></h4></p>
 								<p>
-									<button type="button" class="btn btn-success" id="plus-button" role="button" onclick="buttonpress();">+</button>
-									<button type="button" class="btn btn-danger" id="minus-button" role="button">-</button>
+									<button type="button" class="btn btn-success plus-button" role="button">+</button>
+									<button type="button" class="btn btn-danger minus-button" role="button">-</button>
 								</p>
 							</div>
 						</div>
