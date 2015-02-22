@@ -1,12 +1,29 @@
+
 $(document).ready(function(){
 	$('.plus-button').click(function(){
-    var id = $(this).parent().attr("id");	
+    var id = $(this).parent().attr("id");
+    var button = $(this).parent;
+    var change = 1;
+  
+    if($(this).hasClass('active')) {
+       	$(this).removeClass('active');
+      	change *= -1;
+    }
+    else {
+    	$(this).addClass('active');
+      	if($(this).parent().find('.minus-button').hasClass('active')) {
+            $(this).parent().find('.minus-button').removeClass('active');
+        	change *= 2;
+      	}
+    }
+  
+  
 		$.ajax({
 		  type: "POST",
       url:"/vote",
       data: {
         hall_id: id,
-        vote: 1
+        vote: change
       },
       success: function() {
         
@@ -23,12 +40,27 @@ $(document).ready(function(){
 $(document).ready(function(){
 	$('.minus-button').click(function(){
     var id = $(this).parent().attr("id");
+    var change = -1;
+    
+    if($(this).hasClass('active')) {
+       	$(this).removeClass('active');
+      	change *= -1;
+    }
+    else {
+    	$(this).addClass('active');
+      	if($(this).parent().find('.plus-button').hasClass('active')) {
+       		$(this).parent().find('.plus-button').removeClass('active');
+        	change *= 2;
+      	}
+    }
+      
+      
 		$.ajax({
 		  type: "POST",
       url:"/vote",
       data: {
         hall_id: id,
-        vote: -1
+        vote: change
       },
       success: function() {
         
@@ -40,5 +72,7 @@ $(document).ready(function(){
 		})
 	});
 });
-alert("javascript started");
+
+
+
 
