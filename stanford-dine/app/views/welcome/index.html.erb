@@ -2,7 +2,20 @@
 
 <link href="assets/bootstrap.css" rel="stylesheet">
 <script src="assets/jquery-1.11.2.min.js"></script>
+<script>
 
+$(function(){
+    $('#plus-button').on('click', function(e){
+        alert("BUTTON WAS PRESSED");
+        console.log("button pressed");
+        $.ajax({
+          type:'POST',
+          url:'/vote/'+ $(this).attr('id') + '/1';
+        })
+    });
+});
+
+</script> 
 <HTML>
 	<HEAD>
 		<TITLE>Stanford Dinner</TITLE>
