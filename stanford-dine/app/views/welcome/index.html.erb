@@ -7,7 +7,7 @@
  
 	<BODY>
 		<h1>Dine<h1>
-		<h2>Which Dining Hall is the best today?</h2>
+		<h2>Today is <%=@weekday%>. Which dining hall had a good <%=@meal%>?</h2>
 			<% @halls.each do |hall| %>
 				<div class="col-sm-4">
     			<div class="well">
