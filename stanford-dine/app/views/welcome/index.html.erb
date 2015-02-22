@@ -14,15 +14,17 @@
 		<div class="row">
 			<% @halls.each do |hall| %>
 				<div class="col-sm-4">
-					<div class"thumbnail">
-						<img src="<%= hall.img %>">
-						<div class="caption" id="<% hall.id %>">
-							<h3><%= hall.name %></h3>
-							<p><h4><%= hall.score %></h4></p>
-							<p>
-								<button type="button" class="btn btn-success" id="plus-button" role="button">+</button>
-								<button type="button" class="btn btn-danger" id="minus-button" role="button">-</button>
-							</p>
+					<div class="panel"
+						<div class"thumbnail">
+							<img src="<%= hall.img %>">
+							<div class="caption" id="<% hall.id %>">
+								<h3><%= hall.name %></h3>
+								<p><h4><%= hall.score %></h4></p>
+								<p>
+									<button type="button" class="btn btn-success" id="plus-button" role="button">+</button>
+									<button type="button" class="btn btn-danger" id="minus-button" role="button">-</button>
+								</p>
+							</div>
 						</div>
 					</div>
 				</div>
