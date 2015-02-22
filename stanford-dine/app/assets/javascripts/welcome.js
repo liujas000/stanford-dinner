@@ -1,26 +1,46 @@
 $(document).ready(function(){
-  
-	$('.plus-button').click(function(){
-    
+  $("[id^='score']").each(function(index) {
+  var n = parseInt($(this).text());
+    if(n > 0) {
+      $(this).css('color', 'green');
+    }
+    else if(n < 0) {
+      $(this).css('color', 'red');
+    }
+    else {
+      $(this).css('color', 'black');
+    }
+  });
+  $('.plus-button').click(function(){
     var id = $(this).parent().attr("id");
     var button = $(this).parent;
     var change = 1;
-  
+
     if($(this).hasClass('active')) {
-       	$(this).removeClass('active');
-      	change *= -1;
+        $(this).removeClass('active');
+        change *= -1;
     }
     else {
-    	$(this).addClass('active');
-      	if($(this).parent().find('.minus-button').hasClass('active')) {
+        $(this).addClass('active');
+        if($(this).parent().find('.minus-button').hasClass('active')) {
             $(this).parent().find('.minus-button').removeClass('active');
-        	change *= 2;
-      	}
+            change *= 2;
+        }
     }
-    $("#score"+id).text(parseInt($("#score"+id).text()) + change);
+    var newScore = parseInt($("#score"+id).text()) + change
+    $("#score"+id).text(newScore);
+    if(newScore > 0) {
+      $("#score"+id).css('color', 'green');
+    }
+    else if(newScore < 0) {
+      $("#score"+id).css('color', 'red');
+    }
+    else {
+      $("#score"+id).css('color', 'black');
+    }
   
-		$.ajax({
-		  type: "POST",
+    $.ajax({
+      type: "POST",
       url:"/vote",
       data: {
         hall_id: id,
@@ -33,31 +53,36 @@ $(document).ready(function(){
           console.log(data);
           console.log("ajax failure");
       }
-		})
-    
-	});
-});
-
-$(document).ready(function(){
-	$('.minus-button').click(function(){
+    })
+  });
+  $('.minus-button').click(function(){
     var id = $(this).parent().attr("id");
     var change = -1;
     
     if($(this).hasClass('active')) {
-       	$(this).removeClass('active');
-      	change *= -1;
+        $(this).removeClass('active');
+        change *= -1;
     }
     else {
-    	$(this).addClass('active');
-      	if($(this).parent().find('.plus-button').hasClass('active')) {
-       		$(this).parent().find('.plus-button').removeClass('active');
-        	change *= 2;
-      	}
+      $(this).addClass('active');
+        if($(this).parent().find('.plus-button').hasClass('active')) {
+          $(this).parent().find('.plus-button').removeClass('active');
+          change *= 2;
+        }
     }
-    $("#score"+id).text(parseInt($("#score"+id).text()) + change);
-      
-		$.ajax({
-		  type: "POST",
+    var newScore = parseInt($("#score"+id).text()) + change
+    $("#score"+id).text(newScore);
+    if(newScore > 0) {
+      $("#score"+id).css('color', 'green');
+    }
+    else if(newScore < 0) {
+      $("#score"+id).css('color', 'red');
+    }
+    else {
+      $("#score"+id).css('color', 'black');
+    }
+    $.ajax({
+      type: "POST",
       url:"/vote",
       data: {
         hall_id: id,
@@ -70,6 +95,8 @@ $(document).ready(function(){
           console.log(data);
           console.log("ajax failure");
       }
-		})
-	});
+    })
+  });
 });
+
+
