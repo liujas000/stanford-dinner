@@ -1,7 +1,5 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 
-<link href="assets/bootstrap.css" rel="stylesheet">
-
 <HTML>
 	<HEAD>
 		<TITLE>Stanford Dinner</TITLE>
@@ -10,19 +8,17 @@
 	<BODY>
 		<h1>Dine<h1>
 		<h2>Which Dining Hall is the best today?</h2>
-		<div class="row">
 			<% @halls.each do |hall| %>
 				<div class="col-sm-4">
-					<div class"well well-sm">
-						<div class="col-sm-3" id="<%= hall.id %>">
+    			<div class"panel">
+  				  <div class="btn-group-vertical" id="<%= hall.id %>">
 							<button type="button" class="btn btn-success plus-button" role="button">+</button>
-							<button type="button" class="btn btn-danger minus-button" role="button">-</button>
+  						<button type="button" class="btn btn-danger minus-button" role="button">-</button>
 						</div>
 						<img src="<%= hall.img %>">
-						<p><h4><%= hall.score %></h4></p>
-						</div>
+						<%= hall.score %>
 					</div>
-				</div>
+				 </div>
 			<% end %>
 		</div>
 	</BODY>

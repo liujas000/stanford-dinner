@@ -4,6 +4,6 @@ class VoteController < ApplicationController
     vote_val = params[:vote]
     puts("hall id is " + params[:hall_id] + " and vote val is" +vote_val)
     hall.score += vote_val.to_i;
-    hall.save
+    hall.save 
   end
 end
