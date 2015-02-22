@@ -1,16 +1,25 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 
 <link href="assets/bootstrap.css" rel="stylesheet">
-
+<script src="assets/jquery-1.11.2.min.js"></script>
 <script>
-  $('#plus-button').on('click', function () {
-    var $btn = $(this).button('loading')
-    // business logic...
-    $btn.button('reset')
-  })
-</script>
+buttonpress = function(){
+    alert("BUTTON WAS PRESSED");
+    // console.log("button pressed");
+    // $.ajax({
+    //   type:'POST',
+    //   url:'/vote/'+ $(this).attr('id') + '/1';
+    // })
+}
+$(document).ready(function(){
+	$('#plus-button').click(function(){
+		alert("jquery button was pressed");
+	})
+})
+alert("javascript started");
+</script> 
 
- 
+
 <HTML>
 	<HEAD>
 		<TITLE>Stanford Dinner</TITLE>
@@ -29,7 +38,7 @@
 								<h3><%= hall.name %></h3>
 								<p><h4><%= hall.score %></h4></p>
 								<p>
-									<button type="button" class="btn btn-success" id="plus-button" role="button" onclick="buttonpress();">+</button>
+									<button type="button" class="btn btn-success" id="plus-button" role="button">+</button>
 									<button type="button" class="btn btn-danger" id="minus-button" role="button">-</button>
 								</p>
 							</div>
