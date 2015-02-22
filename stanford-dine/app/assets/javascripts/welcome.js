@@ -1,5 +1,5 @@
 
-$(document).ready(function(){
+$(document).ready(function() {
   $("[id^='score']").each(function(index) {
   var n = parseInt($(this).getText());
     if(n > 0) {
@@ -28,7 +28,7 @@ $(document).ready(function(){
             change *= 2;
         }
     }
-    var newScore = parseInt($("#score"+id).text()) + change
+    var newScore = parseInt($("#score"+id).text()) + change;
     $("#score"+id).text(newScore);
     if(k > 0) {
       $(newScore).css('color', 'green');
@@ -56,10 +56,6 @@ $(document).ready(function(){
       }
     })
   });
-});
-
- 
-$(document).ready(function(){
   $('.minus-button').click(function(){
     var id = $(this).parent().attr("id");
     var change = -1;
@@ -75,7 +71,7 @@ $(document).ready(function(){
           change *= 2;
         }
     }
-    var newScore = parseInt($("#score"+id).text()) + change
+    var newScore = parseInt($("#score"+id).text()) + change;
     $("#score"+id).text(newScore);
     if(k > 0) {
       $(newScore).css('color', 'green');
@@ -103,6 +99,7 @@ $(document).ready(function(){
     })
   });
 });
+
 
 
 
