@@ -2,37 +2,6 @@
 
 <link href="assets/bootstrap.css" rel="stylesheet">
 
-<script>
-$(document).ready(function(){
-	$('.plus-button').click(function(){
-		alert("plus button pressed");
-		$.ajax({
-			type: "POST",
-			url: "/vote",
-			data: {
-				hall_id: $(this).parent().attr("id");
-				vote: 1;
-			}
-			complete: function() {
-				alert("ajax complete");
-			}
-			success: function() {
-				alert("ajax success");
-			}
-			error: function() {
-				alert("ajax error");
-			}
-		});
-	});
-})
-$(document).ready(function(){
-	$('.minus-button').click(function(){
-		alert("minus button pressed");
-	});
-});
-alert("javascript started");
-</script> 
-
 <HTML>
 	<HEAD>
 		<TITLE>Stanford Dinner</TITLE>
@@ -44,19 +13,17 @@ alert("javascript started");
 		<div class="row">
 			<% @halls.each do |hall| %>
 				<div class="col-sm-4">
-					<div class="panel"
-						<div class"thumbnail">
-							<img src="<%= hall.img %>">
-							<div class="caption">
-								<h3><%= hall.name %></h3>
-								<p><h4><%= hall.score %></h4></p>
-								<p>
-									<div id="<%= hall.id %>">
-										<button type="button" class="btn btn-success plus-button" role="button">+</button>
-										<button type="button" class="btn btn-danger minus-button" role="button">-</button>
-									</div>
-								</p>
-							</div>
+					<div class"thumbnail">
+						<img src="<%= hall.img %>">
+						<div class="caption">
+							<h3><%= hall.name %></h3>
+							<p><h4><%= hall.score %></h4></p>
+							<p>
+								<div id="<%= hall.id %>">
+									<button type="button" class="btn btn-success plus-button" role="button">+</button>
+									<button type="button" class="btn btn-danger minus-button" role="button">-</button>
+								</div>
+							</p>
 						</div>
 					</div>
 				</div>
