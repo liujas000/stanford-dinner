@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 
 <link href="assets/bootstrap.css" rel="stylesheet">
-
+<script src="assets/jquery-1.11.2.min.js"></script>
 <script>
 $(document).ready(function(){
 	$('.plus-button').click(function(){
@@ -15,6 +15,7 @@ $(document).ready(function(){
 })
 alert("javascript started");
 </script> 
+
 
 <HTML>
 	<HEAD>
@@ -34,8 +35,13 @@ alert("javascript started");
 								<h3><%= hall.name %></h3>
 								<p><h4><%= hall.score %></h4></p>
 								<p>
+<<<<<<< HEAD
+									<button type="button" class="btn btn-success" id="plus-button" role="button">+</button>
+									<button type="button" class="btn btn-danger" id="minus-button" role="button">-</button>
+=======
 									<button type="button" class="btn btn-success plus-button" role="button">+</button>
 									<button type="button" class="btn btn-danger minus-button" role="button">-</button>
+>>>>>>> 5a078fa8121c317bd37405d1796dd5bdc2a2e497
 								</p>
 							</div>
 						</div>
