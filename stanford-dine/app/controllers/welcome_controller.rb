@@ -2,7 +2,7 @@ class WelcomeController < ApplicationController
   def index
     @halls = Hall.all
     @weekday = Time.now.strftime('%A')
-    hour = Time.now.strftime("%K").to_i
+    hour = Time.now.strftime("%H").to_i
     if(@weekday == "Saturday" || @weekday == "Sunday")
       if(hour > 7 && hour < 16) 
         @meal = "Brunch"
