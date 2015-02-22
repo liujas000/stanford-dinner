@@ -58,6 +58,7 @@ $(document).ready(function(){
   });
 });
 
+ 
 $(document).ready(function(){
   $('.minus-button').click(function(){
     var id = $(this).parent().attr("id");
