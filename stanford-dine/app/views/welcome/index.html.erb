@@ -4,7 +4,7 @@
 <script src="assets/jquery-1.11.2.min.js"></script>
 <script>
 
-$(function(){
+buttonpress = function(){
     $('#plus-button').on('click', function(e){
         alert("BUTTON WAS PRESSED");
         console.log("button pressed");
@@ -13,7 +13,7 @@ $(function(){
           url:'/vote/'+ $(this).attr('id') + '/1';
         })
     });
-});
+}
 
 </script> 
 <HTML>
@@ -34,7 +34,7 @@ $(function(){
 								<h3><%= hall.name %></h3>
 								<p><h4><%= hall.score %></h4></p>
 								<p>
-									<button type="button" class="btn btn-success" id="plus-button" role="button">+</button>
+									<button type="button" class="btn btn-success" id="plus-button" role="button" onclick="buttonpress();">+</button>
 									<button type="button" class="btn btn-danger" id="minus-button" role="button">-</button>
 								</p>
 							</div>
