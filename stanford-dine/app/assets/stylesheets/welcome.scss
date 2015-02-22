@@ -1,3 +1,40 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body{
+  background-color: #D6F5FF;
+}
+
+.cursive-header{
+  font-style: bold;
+  text-indent: 40px;
+  
+}
+
+.italic {
+  font-style: italic;
+  text-align: center;
+}
+
+.outer {
+  position: relative;
+}
+
+.b-1 {
+  position:relative;
+  top:17px;
+  left:0px;
+}
+
+.b-2{
+  position:relative;
+  bottom:-17px;
+  left:0px;
+}
+
+.score {
+  position:relative;
+  font-size: 60px;
+}
+
