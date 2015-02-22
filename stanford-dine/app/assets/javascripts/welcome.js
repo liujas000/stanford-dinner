@@ -1,23 +1,13 @@
 
-// $(function(){
-//     $('#plus-button').on('click', function(e){
-//         alert("BUTTON WAS PRESSED"å);
-//         console.log("button pressed");
-//         $.ajax({
-//           type:'POST',
-//           url:'/vote/'+ $(this).attr('id') + '/1';
-//         })
-//     });
-// });
 $(document).ready(function(){
 	$('.plus-button').click(function(){
-    var abc = $(this).parent().attr("id");
-		alert("plus button pressed " + abc);
+    var id = $(this).parent().attr("id");
+		alert("plus button pressed " + id);
 		$.ajax({
 		  type: "POST",
       url:"/vote",
       data: {
-        hall_id: abc,
+        hall_id: id,
         vote: 1
       },
       success: function() {
@@ -34,8 +24,23 @@ $(document).ready(function(){
 
 $(document).ready(function(){
 	$('.minus-button').click(function(){
-    var abc = $(this).parent().attr("id");
-		alert("minus button pressed" + abc);
+    var id = $(this).parent().attr("id");
+		alert("minus button pressed" + id);
+		$.ajax({
+		  type: "POST",
+      url:"/vote",
+      data: {
+        hall_id: id,
+        vote: -1
+      },
+      success: function() {
+        alert("ajax success");
+      },
+      error: function(data) {
+          console.log(data);
+          alert("ajax failure");
+      }
+		})
 	});
 });
 alert("javascript started");
