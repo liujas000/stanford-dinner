@@ -1,8 +1,9 @@
 class VoteController < ApplicationController
   def index
-    puts("THIS IS A STRING THAT I AM PUTTING")
-    @hall = Hall.find(params[:hall_id])
+    hall = Hall.find(params[:hall_id])
     vote_val = params[:vote]
-    puts(vote_val)
+    puts("hall id is " + params[:hall_id] + " and vote val is" +vote_val)
+    hall.score += vote_val.to_i;
+    hall.save
   end
 end
