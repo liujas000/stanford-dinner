@@ -16,7 +16,7 @@ $(document).ready(function(){
         	change *= 2;
       	}
     }
-  
+    $("#score"+id).text(parseInt($("#score"+id).text()) + change);
   
 		$.ajax({
 		  type: "POST",
@@ -53,7 +53,7 @@ $(document).ready(function(){
         	change *= 2;
       	}
     }
-      
+    $("#score"+id).text(parseInt($("#score"+id).text()) + change);
       
 		$.ajax({
 		  type: "POST",

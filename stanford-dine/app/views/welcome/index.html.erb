@@ -10,13 +10,21 @@
 		<h2>Which Dining Hall is the best today?</h2>
 			<% @halls.each do |hall| %>
 				<div class="col-sm-4">
-    			<div class"panel">
-  				  <div class="btn-group-vertical" id="<%= hall.id %>">
-							<button type="button" class="btn btn-success plus-button" role="button">+</button>
-  						<button type="button" class="btn btn-danger minus-button" role="button">-</button>
-						</div>
-						<img src="<%= hall.img %>">
-						<%= hall.score %>
+    			<div class="well">
+            <div class="row">
+              <div class="col-md-2">
+  				      <div class="btn-group-vertical" id="<%= hall.id %>">
+							    <button type="button" class="btn btn-success plus-button" role="button">+</button>
+  						    <button type="button" class="btn btn-danger minus-button" role="button">-</button>
+						    </div>
+              </div>
+              <div class="col-md-8">
+						    <img src="<%= hall.img %>">
+              </div>
+              <div id="score<%= hall.id %>" >
+						    <%= hall.score %>
+              </div>
+            </div>
 					</div>
 				 </div>
 			<% end %>
